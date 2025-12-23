@@ -10,9 +10,9 @@ import psutil
 
 # Function to take threshold values from user
 def get_thresholds():
-    cpu_threshold = int(input("Enter CPU usage threshold (%) : "))
-    memory_threshold = int(input("Enter Memory usage threshold (%) : "))
-    disk_threshold = int(input("Enter Disk usage threshold (%) : "))
+    cpu_threshold = int(input("\nEnter CPU usage threshold (%) : "))
+    memory_threshold = int(input("\nEnter Memory usage threshold (%) : "))
+    disk_threshold = int(input("\nEnter Disk usage threshold (%) : "))
     return cpu_threshold, memory_threshold, disk_threshold
 
 # Function to compare system metrics against thresold
@@ -26,39 +26,28 @@ def check_system_health():
     system_memory_usage = psutil.virtual_memory().percent
     system_disk_usage = psutil.disk_usage('/').percent
 
-    print("\n---System Health Check---\n")
-
     # CPU check
-    print(f"CPU Usage: {system_cpu_usage}%")
+    print(f"\nCPU Usage: {system_cpu_usage}%")
     if system_cpu_usage > cpu_threshold:
         print("⚠️ CPU usage is above threshold!")
     else:
         print("✅ CPU usage is within limits.")
 
     # Memory check
-    print(f"Memory Usage: {system_memory_usage}%")
+    print(f"\nMemory Usage: {system_memory_usage}%")
     if system_memory_usage > memory_threshold:
         print("⚠️ Memory usage is above threshold!")
     else:
         print("✅ Memory usage is within limits.")
 
     # Disk check
-    print(f"Disk Usage: {system_disk_usage}%")
+    print(f"\nDisk Usage: {system_disk_usage}%")
     if system_disk_usage > disk_threshold:
-        print("⚠️ Disk usage is above threshold!\n")
+        print("⚠️ Disk usage is above threshold!")
     else:
-        print("✅ Disk usage is within limits.\n")
+        print("✅ Disk usage is within limits.")
 
 
-while True:
-    print("=== System Health Check ===\n")
-    check_system_health()
-    
-    choice = input("Run again? (yes/no): ").strip().lower()
-    if choice != "yes":
-        print("Exiting system health check 👋\n")
-        break
-
-    
-        
+print("\n=== System Health Check ===")
+check_system_health()
 
