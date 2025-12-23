@@ -12,14 +12,12 @@ def get_stock_market_data(symbol,is_timeseries):
         query = f"query?symbol={symbol}&apikey={API_KEY}"
     response = requests.get(url=api_url+query)
     for key, value in response.json().items():
-        if is_timeseries:
-            
+         if key == "Time Series (Daily)":
+            continue
+         else:
             print(key,value)
-        else:
-            if key == "Time Series (Daily)":
-                continue
 
-
-symbol = input("Enter the Symbol you want for the Stock Market API eg. (AMZN, GOGL, IBM, etc)")
+  
+symbol = input("Enter the Symbol you want for the Stock Market API eg. (AMZN, GOGL, IBM, etc)").upper()
 is_timeseries = True
 get_stock_market_data(symbol,is_timeseries)

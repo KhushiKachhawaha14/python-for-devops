@@ -12,8 +12,9 @@ print("I live in",info["city"])
 print("I love ", info.get("favourite","Not Found"))
 
 info.update({"channel": "TrainWithShubham"})
+info.update({"favourites": ["re","rre","ttr"]})
 
-print(dir(info))
+print((info))
 
 for key,value in info.items():
     print(key,value)

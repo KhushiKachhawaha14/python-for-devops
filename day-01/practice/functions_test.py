@@ -12,7 +12,7 @@ def sum_of_num(): # function definition (KAAM)
     sum = num1 + num2 # step 
     print(sum) #step
 
-env = input("Enter the Environment") # taking input from the user (Keyboard) in env variable
+env = input("Enter the Environment ") # taking input from the user (Keyboard) in env variable
 
 print("The User input Env is: ",env)
 
@@ -24,6 +24,6 @@ if env == "prd":
 def take_backup():
     print("Backup script started ...")
 
-
+day = input("ENTER the day: ")
 if day == "Monday":
     take_backup()
