@@ -1,0 +1,7 @@
+# Ignore generated FinOps reports
+finops_analysis_*.md
+finops_report_*.md
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
